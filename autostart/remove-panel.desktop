@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=killall xfce4-panel
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=KillerPanels
+Name=MatadorDePaines
+Comment[en_US]=
+Comment=Mata os paineis do xfce

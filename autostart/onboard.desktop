@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=onboard
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=onboard
+Name=onbord
+Comment[en_US]=
+Comment=

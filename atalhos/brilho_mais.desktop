@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Aumentar Brilho
+Exec=/opt/brilho.py mais 
+Terminal=false
+Icon=/usr/share/icons/brilho_mais.png
+Type=Application
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+Actions=new-window;new-private-window;
