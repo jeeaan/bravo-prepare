@@ -1,5 +1,5 @@
 #!/bin/bash
-
+PWD=$(pwd)
 DESKTOP_PATH=$(xdg-user-dir DESKTOP)
 MAIS="$DESKTOP_PATH/brilho_mais.desktop"
 MENOS="$DESKTOP_PATH/brilho_menos.desktop"
@@ -11,6 +11,8 @@ then
 	exit 0
 else
 	# Esta faltando algum icone e vou 'reconfigurar' o sistema
+	echo $DESKTOP_PATH
+	echo $PWD
 	./customize.sh
 	./atalhos.sh
 	exit 1
