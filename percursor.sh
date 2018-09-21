@@ -9,10 +9,10 @@ MENOS="$DESKTOP_PATH/brilho_menos.desktop"
 TECLADO="$DESKTOP_PATH/teclado.desktop"
 
 function lightdm_is_running {
-	status=$(systemctl status lightdm | grep "running")
-	if [ -z "$status" ] && [ ! -f "SECOND_BOOT" ]
+	STATUS=$(systemctl status lightdm | grep "running")
+	if [ -z "$STATUS" ] && [ ! -f "SECOND_BOOT" ]
 	then
-		# Flag para rebootar o sistema APENAS primeira execucao
+		# Flag para rebootar o sistema APENAS na primeira execucao depois da instalacao
 		touch $SECOND_BOOT
 		reboot
 	else
@@ -30,10 +30,10 @@ fi
 
 if [ -f "$MAIS" ] && [ -f "$MENOS" ]  && [ -f "$TECLADO" ]
 then
-	# Assumindo que o sistema esta ok!
+	# Assumindo que o sistema esta ok, o script morre aqui toda vez que o sistema inicia
 	exit 0
 else
-	# Esta faltando algum icone e vou 'reconfigurar' o sistema
+	# Primeira execucao ou esta faltando algum icone e vou '(re)configurar' o sistema
 	"$WHERE_AM_I"/customize.sh $USUARIO_BRAVO "$DESKTOP_PATH" $WHERE_AM_I
 	"$WHERE_AM_I"/atalhos.sh $USUARIO_BRAVO "$DESKTOP_PATH" $WHERE_AM_I
 	while lightdm_is_running ; do true; done

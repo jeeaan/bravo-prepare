@@ -1,0 +1,5 @@
+[Service]
+ExecStart=/bin/bash /opt/bravo-prepare/percursor.sh
+
+[Install]
+WantedBy=default.target
