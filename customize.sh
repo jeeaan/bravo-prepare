@@ -2,23 +2,25 @@
 USUARIO_BRAVO=$1
 DESKTOP_PATH=$2
 WHERE_AM_I=$3
+ONBOARD_KEY_DEF_FILE="/usr/share/onboard/layouts/key_defs.xml"
 
 # Desabilita o travamento da tela
-gsettings set org.gnome.desktop.lockdown disable-lock-screen true
+su $USUARIO_BRAVO -c "gsettings set org.gnome.desktop.lockdown disable-lock-screen true"
+
+# Ativa o gnome acessibility
+su $USUARIO_BRAVO -c "gsettings set org.gnome.desktop.interface toolkit-accessibility true"
 
 # Configuracoes do teclado virtual
-gsettings set org.onboard.icon-palette in-use true
-gsettings set org.onboard.window docking-enabled false
-gsettings set org.onboard.auto-show enabled true
+su $USUARIO_BRAVO -c "gsettings set org.onboard.icon-palette in-use true"
+su $USUARIO_BRAVO -c "gsettings set org.onboard.window docking-enabled false"
+su $USUARIO_BRAVO -c "gsettings set org.onboard.auto-show enabled true"
+cp "$WHERE_AM_I"/conf/key_defs.xml $ONBOARD_KEY_DEF_FILE
 
 # Autostart do teclado virtual
 mkdir -p /home/"$USUARIO_BRAVO"/.config/autostart/
 cp "$WHERE_AM_I"/autostart/onboard.desktop /home/"$USUARIO_BRAVO"/.config/autostart/.
 # Remocao de menu 'iniciar'
 cp "$WHERE_AM_I"/autostart/remove-panel.desktop /home/"$USUARIO_BRAVO"/.config/autostart/.
-
-# Ativa o gnome acessibility
-gsettings set org.gnome.desktop.interface toolkit-accessibility true
 
 # Autologin
 isInFile=$(cat /usr/share/lightdm/lightdm.conf.d/50-greeter-wrapper.conf | grep -c "autologin-user=$USUARIO_BRAVO")

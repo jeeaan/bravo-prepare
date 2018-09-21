@@ -4,7 +4,7 @@ DESKTOP_PATH=$2
 WHERE_AM_I=$3
 
 # Controlador do brilho da tela
-cp "$WHERE_AM_I"/scripts/brilho.py /opt/.
+cp "$WHERE_AM_I"/conf/brilho.py /opt/.
 
 # Atalhos da area de trabalho
 cp "$WHERE_AM_I"/atalhos/brilho_mais.desktop "$DESKTOP_PATH"/.
