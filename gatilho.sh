@@ -15,6 +15,6 @@ else
 	# Esta faltando algum icone e vou 'reconfigurar' o sistema
 	"$WHERE_AM_I"/customize.sh $USUARIO_BRAVO "$DESKTOP_PATH" $WHERE_AM_I
 	"$WHERE_AM_I"/atalhos.sh $USUARIO_BRAVO "$DESKTOP_PATH" $WHERE_AM_I
-	xfdesktop --reload
+	reboot
 	exit 1
 fi
