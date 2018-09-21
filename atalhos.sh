@@ -1,22 +1,23 @@
 #!/bin/bash
 USUARIO_BRAVO=$1
 DESKTOP_PATH=$2
+WHERE_AM_I=$3
 
 # Controlador do brilho da tela
-cp scripts/brilho.py /opt/.
+cp "$WHERE_AM_I"/scripts/brilho.py /opt/.
 
 # Atalhos da area de trabalho
-cp atalhos/brilho_mais.desktop "$DESKTOP_PATH"/.
-cp atalhos/brilho_menos.desktop "$DESKTOP_PATH"/.
-cp atalhos/teclado.desktop "$DESKTOP_PATH"/.
-cp atalhos/network.desktop "$DESKTOP_PATH"/.
-cp atalhos/instalador-gcb.desktop /usr/share/applications/.
+cp "$WHERE_AM_I"/atalhos/brilho_mais.desktop "$DESKTOP_PATH"/.
+cp "$WHERE_AM_I"/atalhos/brilho_menos.desktop "$DESKTOP_PATH"/.
+cp "$WHERE_AM_I"/atalhos/teclado.desktop "$DESKTOP_PATH"/.
+cp "$WHERE_AM_I"/atalhos/network.desktop "$DESKTOP_PATH"/.
+cp "$WHERE_AM_I"/atalhos/instalador-gcb.desktop /usr/share/applications/.
 
 # Figura dos atalhos
-cp images/tank.png /usr/share/icons/.
-cp images/brilho_menos.png /usr/share/icons/.
-cp images/brilho_mais.png /usr/share/icons/.
-cp images/wifi.png /usr/share/icons/.
+cp "$WHERE_AM_I"/images/tank.png /usr/share/icons/.
+cp "$WHERE_AM_I"/images/brilho_menos.png /usr/share/icons/.
+cp "$WHERE_AM_I"/images/brilho_mais.png /usr/share/icons/.
+cp "$WHERE_AM_I"/images/wifi.png /usr/share/icons/.
 
 # Define que arquivo .bin abre com o java -jar
 isInFile=$(cat /usr/share/applications/defaults.list | grep -c "application/octet-stream=instalador-gcb.desktop")
@@ -53,5 +54,5 @@ EOF
 chattr +i /home/"$USUARIO_BRAVO"/.config/xfce4/desktop/icons*
 
 # Da permissao de execucao para os atalhos
-chown $USUARIO_BRAVO:$USUARIO_BRAVO "$DESKTOP_PATH"/*
+chown "$USUARIO_BRAVO":"$USUARIO_BRAVO" "$DESKTOP_PATH"/*
 chmod +x "$DESKTOP_PATH"/*

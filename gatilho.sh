@@ -1,6 +1,7 @@
 #!/bin/bash
 
 USUARIO_BRAVO="bravous"
+WHERE_AM_I="/opt/bravo-prepare"
 
 # DESKTOP_PATH hardcoded pq mesmo usando o xdg-user-dir o espaco da 'Area de Trabalho' tava quebrando
 #DESKTOP_PATH=$(xdg-user-dir DESKTOP)
@@ -17,7 +18,7 @@ then
 else
 	# Esta faltando algum icone e vou 'reconfigurar' o sistema
 	ln -s /home/bravous/Área\ de\ Trabalho/ $DESKTOP_PATH
-	/opt/bravo-prepare/customize.sh $USUARIO_BRAVO $DESKTOP_PATH
-	/opt/bravo-prepare/atalhos.sh $USUARIO_BRAVO $DESKTOP_PATH
+	"$WHERE_AM_I"/customize.sh $USUARIO_BRAVO $DESKTOP_PATH $WHERE_AM_I
+	"$WHERE_AM_I"/atalhos.sh $USUARIO_BRAVO $DESKTOP_PATH $WHERE_AM_I
 	exit 1
 fi
