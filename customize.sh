@@ -1,7 +1,8 @@
 #!/bin/bash
+USUARIO_BRAVO=$1
+DESKTOP_PATH=$2
 
-USUARIO_BRAVO="bravous"
-
+# Desabilita o travamento da tela
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 
 # Configuracoes do teclado virtual
@@ -10,10 +11,10 @@ gsettings set org.onboard.window docking-enabled false
 gsettings set org.onboard.auto-show enabled true
 
 # Autostart do teclado virtual
-mkdir -p ~/.config/autostart/
-cp dependencies/autostart/onboard.desktop ~/.config/autostart/.
+mkdir -p /home/"$USUARIO_BRAVO"/.config/autostart/
+cp dependencies/autostart/onboard.desktop /home/"$USUARIO_BRAVO"/.config/autostart/.
 # Remocao de menu 'iniciar'
-cp dependencies/autostart/remove-panel.desktop ~/.config/autostart/.
+cp dependencies/autostart/remove-panel.desktop /home/"$USUARIO_BRAVO"/.config/autostart/.
 
 # Ativa o gnome acessibility
 gsettings set org.gnome.desktop.interface toolkit-accessibility true
@@ -28,7 +29,7 @@ fi
 cp dependencies/images/guarani-wallpaper.jpg /usr/share/wallpapers/.
 
 # Configuracoes do xfce
-cp dependencies/xfce-files/xfce4-desktop.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/.
-cp dependencies/xfce-files/xfce4-panel.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/.
-cp dependencies/xfce-files/xfce4-power-manager.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/.
-cp dependencies/xfce-files/xfce4-keyboard-shortcuts.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/.
+cp dependencies/xfce-files/xfce4-desktop.xml /home/"$USUARIO_BRAVO"/.config/xfce4/xfconf/xfce-perchannel-xml/.
+cp dependencies/xfce-files/xfce4-panel.xml /home/"$USUARIO_BRAVO"/.config/xfce4/xfconf/xfce-perchannel-xml/.
+cp dependencies/xfce-files/xfce4-power-manager.xml /home/"$USUARIO_BRAVO"/.config/xfce4/xfconf/xfce-perchannel-xml/.
+cp dependencies/xfce-files/xfce4-keyboard-shortcuts.xml /home/"$USUARIO_BRAVO"/.config/xfce4/xfconf/xfce-perchannel-xml/.
