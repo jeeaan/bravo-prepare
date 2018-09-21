@@ -52,6 +52,7 @@ row=3
 col=1
 EOF
 chattr +i /home/"$USUARIO_BRAVO"/.config/xfce4/desktop/icons*
+xfdesktop --reload
 
 # Da permissao de execucao para os atalhos
 chown "$USUARIO_BRAVO":"$USUARIO_BRAVO" "$DESKTOP_PATH"/*

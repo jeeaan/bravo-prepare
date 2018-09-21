@@ -4,12 +4,15 @@ USUARIO_BRAVO="bravous"
 WHERE_AM_I="/opt/bravo-prepare"
 
 # DESKTOP_PATH hardcoded pq mesmo usando o xdg-user-dir o espaco da 'Area de Trabalho' tava quebrando
-#DESKTOP_PATH=$(xdg-user-dir DESKTOP)
-DESKTOP_PATH="/home/bravous/Desktop"
+AREA_DE_TRABALHO_PATH=$(runuser -l $USUARIO_BRAVO -c 'xdg-user-dir DESKTOP')
+DESKTOP_PATH="/home/"$USUARIO_BRAVO"/Desktop"
 
 MAIS="$DESKTOP_PATH/brilho_mais.desktop"
 MENOS="$DESKTOP_PATH/brilho_menos.desktop"
 TECLADO="$DESKTOP_PATH/teclado.desktop"
+
+ln -s "$AREA_DE_TRABALHO_PATH" "$DESKTOP_PATH"
+rm "$DESKTOP_PATH"/'Área\ de\ Trabalho'
 
 if [ -f "$MAIS" ] && [ -f "$MENOS" ]  && [ -f "$TECLADO" ]
 then
@@ -17,7 +20,6 @@ then
 	exit 0
 else
 	# Esta faltando algum icone e vou 'reconfigurar' o sistema
-	ln -s /home/"$USUARIO_BRAVO"/Área\ de\ Trabalho $DESKTOP_PATH
 	"$WHERE_AM_I"/customize.sh $USUARIO_BRAVO $DESKTOP_PATH $WHERE_AM_I
 	"$WHERE_AM_I"/atalhos.sh $USUARIO_BRAVO $DESKTOP_PATH $WHERE_AM_I
 	exit 1
