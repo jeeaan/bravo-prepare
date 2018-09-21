@@ -20,7 +20,7 @@ Conjunto de scripts p/ transformação do Linux Mint Xfce 19.
 	- Verifica se é a primeira vez que o script está rodando (boot da iso), não faz nada. Vai esperar o sistema ser instalado;
 	- Verifica se é a segunda vez que o script está rodando (o sistema acabou de reiniciar logo após o final da instalação). Vai rodar os scripts de customização;
 	- Espera até que o lightdm inicie (modo gráfico), assim que ele iniciar REINICIA o sistema automaticamente pela última vez.
-	- Todas as outras vezes em que o sistema iniciar, vai verificar se todos os ícones estão na área de trabalho, caso não estejam, chama os scripts abaixo.
+	- Todas as outras vezes em que o sistema iniciar, vai verificar se todos os ícones estão na área de trabalho, caso não estejam, roda os scripts de customização.
 
 - `customize.sh`
 	- Remove o travamento da tela;
