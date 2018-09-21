@@ -17,7 +17,7 @@ then
 	exit 0
 else
 	# Esta faltando algum icone e vou 'reconfigurar' o sistema
-	ln -s /home/bravous/Área\ de\ Trabalho/ $DESKTOP_PATH
+	ln -s /home/"$USUARIO_BRAVO"/Área\ de\ Trabalho $DESKTOP_PATH
 	"$WHERE_AM_I"/customize.sh $USUARIO_BRAVO $DESKTOP_PATH $WHERE_AM_I
 	"$WHERE_AM_I"/atalhos.sh $USUARIO_BRAVO $DESKTOP_PATH $WHERE_AM_I
 	exit 1
