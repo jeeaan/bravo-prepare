@@ -11,8 +11,7 @@ MAIS="$DESKTOP_PATH/brilho_mais.desktop"
 MENOS="$DESKTOP_PATH/brilho_menos.desktop"
 TECLADO="$DESKTOP_PATH/teclado.desktop"
 
-ln -s "$AREA_DE_TRABALHO_PATH" "$DESKTOP_PATH"
-rm "$DESKTOP_PATH"/Área\ de\ Trabalho
+ln -s "/home/"$USUARIO_BRAVO"/Área de Trabalho" "$DESKTOP_PATH"
 
 if [ -f "$MAIS" ] && [ -f "$MENOS" ]  && [ -f "$TECLADO" ]
 then

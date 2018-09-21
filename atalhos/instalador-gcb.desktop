@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Executar instalador do GCB
 Comment=OpenJDK Java 11 Runtime
-Exec=/usr/bin/java -jar %f
+Exec=/usr/bin/flock --nb /tmp/instalador-gcbbravo.lock /usr/bin/java -jar %f
 Terminal=false
 Type=Application
 Icon=openjdk-11
