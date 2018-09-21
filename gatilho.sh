@@ -2,10 +2,7 @@
 
 USUARIO_BRAVO="bravous"
 WHERE_AM_I="/opt/bravo-prepare"
-
-# DESKTOP_PATH hardcoded pq mesmo usando o xdg-user-dir o espaco da 'Area de Trabalho' tava quebrando
 DESKTOP_PATH="$(runuser -u $USUARIO_BRAVO xdg-user-dir DESKTOP)"
-
 MAIS="$DESKTOP_PATH/brilho_mais.desktop"
 MENOS="$DESKTOP_PATH/brilho_menos.desktop"
 TECLADO="$DESKTOP_PATH/teclado.desktop"
