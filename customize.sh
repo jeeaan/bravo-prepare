@@ -12,9 +12,9 @@ gsettings set org.onboard.auto-show enabled true
 
 # Autostart do teclado virtual
 mkdir -p /home/"$USUARIO_BRAVO"/.config/autostart/
-cp dependencies/autostart/onboard.desktop /home/"$USUARIO_BRAVO"/.config/autostart/.
+cp autostart/onboard.desktop /home/"$USUARIO_BRAVO"/.config/autostart/.
 # Remocao de menu 'iniciar'
-cp dependencies/autostart/remove-panel.desktop /home/"$USUARIO_BRAVO"/.config/autostart/.
+cp autostart/remove-panel.desktop /home/"$USUARIO_BRAVO"/.config/autostart/.
 
 # Ativa o gnome acessibility
 gsettings set org.gnome.desktop.interface toolkit-accessibility true
@@ -26,10 +26,10 @@ if [ $isInFile -eq 0 ]; then
 fi
 
 # Imagem do wallpaper
-cp dependencies/images/guarani-wallpaper.jpg /usr/share/wallpapers/.
+cp images/guarani-wallpaper.jpg /usr/share/wallpapers/.
 
 # Configuracoes do xfce
-cp dependencies/xfce-files/xfce4-desktop.xml /home/"$USUARIO_BRAVO"/.config/xfce4/xfconf/xfce-perchannel-xml/.
-cp dependencies/xfce-files/xfce4-panel.xml /home/"$USUARIO_BRAVO"/.config/xfce4/xfconf/xfce-perchannel-xml/.
-cp dependencies/xfce-files/xfce4-power-manager.xml /home/"$USUARIO_BRAVO"/.config/xfce4/xfconf/xfce-perchannel-xml/.
-cp dependencies/xfce-files/xfce4-keyboard-shortcuts.xml /home/"$USUARIO_BRAVO"/.config/xfce4/xfconf/xfce-perchannel-xml/.
+cp xfce-files/xfce4-desktop.xml /home/"$USUARIO_BRAVO"/.config/xfce4/xfconf/xfce-perchannel-xml/.
+cp xfce-files/xfce4-panel.xml /home/"$USUARIO_BRAVO"/.config/xfce4/xfconf/xfce-perchannel-xml/.
+cp xfce-files/xfce4-power-manager.xml /home/"$USUARIO_BRAVO"/.config/xfce4/xfconf/xfce-perchannel-xml/.
+cp xfce-files/xfce4-keyboard-shortcuts.xml /home/"$USUARIO_BRAVO"/.config/xfce4/xfconf/xfce-perchannel-xml/.

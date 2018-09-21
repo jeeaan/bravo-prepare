@@ -6,17 +6,17 @@ DESKTOP_PATH=$2
 cp scripts/brilho.py /opt/.
 
 # Atalhos da area de trabalho
-cp dependencies/atalhos/brilho_mais.desktop "$DESKTOP_PATH"/.
-cp dependencies/atalhos/brilho_menos.desktop "$DESKTOP_PATH"/.
-cp dependencies/atalhos/teclado.desktop "$DESKTOP_PATH"/.
-cp dependencies/atalhos/network.desktop "$DESKTOP_PATH"/.
-cp dependencies/atalhos/instalador-gcb.desktop /usr/share/applications/.
+cp atalhos/brilho_mais.desktop "$DESKTOP_PATH"/.
+cp atalhos/brilho_menos.desktop "$DESKTOP_PATH"/.
+cp atalhos/teclado.desktop "$DESKTOP_PATH"/.
+cp atalhos/network.desktop "$DESKTOP_PATH"/.
+cp atalhos/instalador-gcb.desktop /usr/share/applications/.
 
 # Figura dos atalhos
-cp dependencies/images/tank.png /usr/share/icons/.
-cp dependencies/images/brilho_menos.png /usr/share/icons/.
-cp dependencies/images/brilho_mais.png /usr/share/icons/.
-cp dependencies/images/wifi.png /usr/share/icons/.
+cp images/tank.png /usr/share/icons/.
+cp images/brilho_menos.png /usr/share/icons/.
+cp images/brilho_mais.png /usr/share/icons/.
+cp images/wifi.png /usr/share/icons/.
 
 # Define que arquivo .bin abre com o java -jar
 isInFile=$(cat /usr/share/applications/defaults.list | grep -c "application/octet-stream=instalador-gcb.desktop")
